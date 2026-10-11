@@ -1,0 +1,9 @@
+{
+  "version": "1.0",
+  "build": 1,
+  "release_notes": "Initial release of VoraMail business email platform",
+  "install_url": "itms-services://?action=download-manifest&url=https://jjthebarberrr-web.github.io/voramail-install/manifest.plist",
+  "release_date": "2026-10-11T02:00:00Z",
+  "minimum_version": "1.0",
+  "force_update": false
+}

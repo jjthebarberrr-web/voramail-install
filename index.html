@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Install VoraMail - Professional Business Email</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', sans-serif;
+            background: linear-gradient(135deg, #4e4696 0%, #6b5eb8 35%, #289ee9 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        .icon {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 30px;
+            background: linear-gradient(135deg, #4e4696 0%, #6b5eb8 35%, #289ee9 100%);
+            border-radius: 26px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            color: white;
+            box-shadow: 0 10px 30px rgba(78, 70, 150, 0.4);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+            color: #1a1a1a;
+            font-size: 32px;
+            font-weight: 700;
+        }
+        .version {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+        .install-btn {
+            display: block;
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, #4e4696 0%, #6b5eb8 35%, #289ee9 100%);
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 15px rgba(78, 70, 150, 0.4);
+        }
+        .install-btn:active {
+            transform: scale(0.98);
+        }
+        .steps {
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid #eee;
+        }
+        .step {
+            margin-bottom: 20px;
+            padding-left: 40px;
+            position: relative;
+        }
+        .step-number {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 28px;
+            height: 28px;
+            background: linear-gradient(135deg, #4e4696 0%, #289ee9 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        .step-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #1a1a1a;
+        }
+        .step-desc {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .note {
+            background: #f0f4ff;
+            border-left: 3px solid #4e4696;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+        .features {
+            margin-top: 25px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 12px;
+        }
+        .features h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+        .features ul {
+            list-style: none;
+            padding: 0;
+        }
+        .features li {
+            padding: 8px 0;
+            color: #666;
+            font-size: 14px;
+        }
+        .features li:before {
+            content: "✓";
+            color: #4e4696;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        @media (prefers-color-scheme: dark) {
+            .container { background: #1c1c1e; }
+            h1 { color: #ffffff; }
+            .version { color: #aeaeb2; }
+            .step-title { color: #ffffff; }
+            .step-desc { color: #aeaeb2; }
+            .steps { border-top-color: #38383a; }
+            .note { background: #2c2c2e; color: #aeaeb2; }
+            .features { background: #2c2c2e; }
+            .features h3 { color: #ffffff; }
+            .features li { color: #aeaeb2; }
+        }
+    </style>
+    <script>
+        // Dynamically load version info
+        fetch('version.json')
+            .then(r => r.json())
+            .then(data => {
+                document.getElementById('version-text').textContent = `Version ${data.version} (Build ${data.build})`;
+            })
+            .catch(() => {
+                document.getElementById('version-text').textContent = 'Version 1.0';
+            });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="icon">📧</div>
+        <h1>VoraMail</h1>
+        <p class="version" id="version-text">Version 1.0</p>
+        
+        <a href="itms-services://?action=download-manifest&url=https://jjthebarberrr-web.github.io/voramail-install/manifest.plist" 
+           class="install-btn">
+            Install VoraMail
+        </a>
+        
+        <div class="features">
+            <h3>Features</h3>
+            <ul>
+                <li>Full JMAP protocol support</li>
+                <li>Rich email composition</li>
+                <li>Offline caching & sync</li>
+                <li>Push notifications</li>
+                <li>Multi-inbox management</li>
+                <li>Enterprise-grade security</li>
+            </ul>
+        </div>
+        
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-title">Tap "Install VoraMail"</div>
+                <div class="step-desc">Safari will ask for permission to install the app</div>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-title">Go to Settings</div>
+                <div class="step-desc">Settings → General → VPN & Device Management</div>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-title">Trust the Profile</div>
+                <div class="step-desc">Tap the VoraMail profile and select "Trust"</div>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-title">Open VoraMail</div>
+                <div class="step-desc">Find VoraMail on your home screen and launch it</div>
+            </div>
+        </div>
+        
+        <div class="note">
+            <strong>Note:</strong> Your device must be registered in the provisioning profile. 
+            If installation fails, contact your administrator.
+        </div>
+    </div>
+</body>
+</html>
